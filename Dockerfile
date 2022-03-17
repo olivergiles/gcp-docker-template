@@ -1,14 +1,10 @@
 FROM python:3.8.12-buster
 
-RUN python3 -m pip install pip --upgrade pip
+COPY api /api
 
-COPY ./requirements.txt /requirements.txt
-COPY ./functions /functions
+COPY requirements.txt /requirements.txt
 
-RUN apt update && \
-    apt install --no-install-recommends -y build-essential gcc && \
-    apt clean && rm -rf /var/lib/apt/lists/* && \
-    pip3 install --no-cache-dir --upgrade pip setuptools && \
-    pip3 install --no-cache-dir -r /requirements.txt
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
 
-CMD ["ls"]
+CMD uvicorn api.app:app --host 0.0.0.0 --port $PORT
