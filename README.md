@@ -1,18 +1,22 @@
 # Template for using gcp on docker
 ## Instructions
 Build the container locally for testing.
-```code
+```bash
 make build_container
 ```
 Build the container for pushing to GCP
-```code
+```bash
 make build_google_container
 ```
 Push to GCP
-```code
+```bash
 make push_google_container
 ```
 Deploy on GCP
-```code
+```bash
 make deploy_google_container
+```
+Delete service on GCP
+```bash
+make stop_google_container
 ```
