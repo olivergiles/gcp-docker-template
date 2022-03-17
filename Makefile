@@ -1,11 +1,14 @@
-PROJECT_ID=learning-344114
-DOCKER_IMAGE_NAME=gcp-test
-REGION=europe-west1
-MEMORY=8Gi
-CPUS=2
+PROJECT_ID=###
+DOCKER_IMAGE_NAME=###
+REGION=###
+MEMORY=###
+CPUS=###
 
 build_container:
 	@docker build -t ${DOCKER_IMAGE_NAME} .
+
+run_container:
+	@podman run -e PORT=8000 -p 8000:8000 ${IMAGE_NAME}
 
 build_google_container:
 	@docker build -t eu.gcr.io/${PROJECT_ID}/${DOCKER_IMAGE_NAME} .
