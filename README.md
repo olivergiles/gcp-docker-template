@@ -1,4 +1,10 @@
 # Template for using gcp on docker
+## Setup
+- Update the makefile
+
+- add your required endpoints to api/app.py
+
+- add the required packages to requirements.txt for your endpoint
 ## Instructions
 Build the container locally for testing.
 ```bash
