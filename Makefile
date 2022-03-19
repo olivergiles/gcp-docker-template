@@ -8,7 +8,7 @@ build_container:
 	@docker build -t ${DOCKER_IMAGE_NAME} .
 
 run_container:
-	@podman run -e PORT=8000 -p 8000:8000 ${IMAGE_NAME}
+	@docker run -e PORT=8000 -p 8000:8000 ${IMAGE_NAME}
 
 build_google_container:
 	@docker build -t eu.gcr.io/${PROJECT_ID}/${DOCKER_IMAGE_NAME} .
